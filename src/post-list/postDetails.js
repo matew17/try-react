@@ -8,13 +8,16 @@ class PostDetails extends Component {
 
   titleWasClicked(event) {
     event.preventDefault();
-    console.log(this.props);
-    alert("Title was clicked!!!");
+    // console.log(this.props);
+    // alert("Title was clicked!!!");
+    const { dataCallback } = this.props;
+    if (dataCallback) {
+      dataCallback("Hello World!!");
+    }
   }
 
   render() {
     const { post } = this.props;
-
     return (
       <div>
         <h3 onClick={this.titleWasClicked}>{post.title}</h3>
