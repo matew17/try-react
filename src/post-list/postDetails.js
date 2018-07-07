@@ -4,6 +4,10 @@ class PostDetails extends Component {
   constructor(props) {
     super(props);
     this.titleWasClicked = this.titleWasClicked.bind(this);
+    this.toggleContent = this.toggleContent.bind(this);
+    this.state = {
+      showContent : true
+    }
   }
 
   titleWasClicked(event) {
@@ -16,12 +20,24 @@ class PostDetails extends Component {
     }
   }
 
+  toggleContent(event) {
+    event.preventDefault();
+    this.setState({
+      showContent : !this.state.showContent
+    });
+  }
+
   render() {
     const { post } = this.props;
+    const { showContent } = this.state;
     return (
       <div>
         <h3 onClick={this.titleWasClicked}>{post.title}</h3>
-        <p>{post.content}</p>
+        {showContent === true ?
+          <p>{post.content}</p> :
+          ''
+        }
+        <button onClick={this.toggleContent}>Toggle content!!</button>
       </div>
     );
   }
