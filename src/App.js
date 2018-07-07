@@ -1,7 +1,7 @@
-import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
-import PostList from './post-list/postList'
+import React, { Component } from "react";
+import logo from "./logo.svg";
+import "./App.css";
+import PostList from "./post-list/postList";
 
 class App extends Component {
   render() {
@@ -12,7 +12,7 @@ class App extends Component {
           <h1 className="App-title">Try React</h1>
         </header>
 
-          <PostList />
+        <PostList />
       </div>
     );
   }
